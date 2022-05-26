@@ -1,0 +1,22 @@
+{
+    "command": {
+        "discord": "print discord >> https://discord.gg/TTJYjDV8d8 << GivePLZ to user end",
+        "gametag": "print ตอนนี้กำลังเล่น>> {game_name} << to user end",
+        "sayhello": "print hello HeyGuys to user end",
+        "sensitivity": "print DPI 850 in game 0.3 to user end",
+        "valorant": "print เกมกาก CurseLit end",
+        "พี่ฟรองซ์": "print ดมอยู่นั้นอะยาดมอะ to tangcheumunyaakjingjingna end",
+        "hello": "print Hello to user end",
+        "game": "print ตอนนี้กำลังเล่น {game_name} to user end"
+    },
+    "User": {
+        "lalabunbun_s": "มิลค์",
+        "seenny97": "ซีนนี่น่ารัก",
+        "gassandgail": "ชื่อณัฐนะฮ่ะไม่ใช่แก๊สสสส",
+        "jamezard": "พี่เจมส์สุดหล่อ",
+        "skyhealth7": "Jeff",
+        "tangcheumunyaakjingjingna": "Veerasatee",
+        "boonjirasrasomsri": "TheMostBeautifulWomeninTheworlCallMeMadameWan",
+        "mheegindekk": "หมีกินเด็ก"
+    }
+}
