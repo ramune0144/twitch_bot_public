@@ -11,8 +11,6 @@ class Bot(commands.Bot):
         self.header = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36'}
         self.config = BotConfig()
-        self.valorant_puuid = "ae6d687d-fa12-53b2-a2fd-e0cd85a8955a"
-        self._Isreq_Apex = False
         self.ID = ''
         self.IsCome = {"name":1}
         self.Channel_Data = {}
@@ -136,32 +134,7 @@ class Bot(commands.Bot):
 
         return result
 
-    async def Valorant(self, ss):
-        if not self._Isreq_Valorant or (time.time()-self.nowTime_valorant)/60 > 5:
-
-            async with aiohttp.ClientSession(headers=self.header) as session:
-                _url = f'https://api.henrikdev.xyz/valorant/v2/by-puuid/mmr/ap/{self.valorant_puuid}'
-                async with session.get(_url) as resp:
-                    self.valorant_data_api = await resp.json()
-            self._Isreq_Valorant = True
-            self.nowTime_valorant = time.time()
-        print("valorant_api")
-        try:
-            return (f'Game Name 🎮 {self.valorant_data_api["data"]["name"]}.' +
-                    f' Game Tag {self.valorant_data_api["data"]["tag"]} ' +
-                    f' Rank 🏆 {self.valorant_data_api["data"]["current_data"]["currenttierpatched"] if ss==" " else self.valorant_data_api["data"]["by_season"][ss]["final_rank_patched"]}! ')
-        except:
-            return ("Error rank in this ss is not found or error ss format ss " +
-                    "format is e{number}a{number} ex e4a3  e is ep and a is act" +
-                    f"   but your input is{ss}")
-
-    @commands.command(name="rank", aliases=['r', 'gr'])
-    async def Rank(self, ctx: commands.Context, game: str = " ", ss=" "):
-        gameList = ['VALORANT']
-        if game == 'valorant' or (game not in gameList and await self.get_game_tag() == 'VALORANT'):
-            await ctx.send(await self.Valorant(ss))
-        else:
-            await ctx.send("Dont have Info about this game!!❌")
+        
 
     @commands.command(name="python", aliases=['py'])
     async def Python(self, ctx: commands.Context, *, msg: str):
